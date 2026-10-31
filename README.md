@@ -57,3 +57,6 @@ Tests cover authentication, validation, all 30 trusted example outputs and behav
 The full original brief is not complete. Admin content CRUD, migrations, guest accounts, complete challenge bank, competitive leaderboard, audio, settings persistence, sophisticated game art/obstacles/enemies, full boss progression, daily goals and production security/rate limiting remain. Knowledge checks are not a substitute for complete coding assessments. Browser-reported game results are unranked and never award competitive XP. Built-in seed synchronization currently updates authored lessons at startup; content editing requires a versioned seed/migration policy before admin authoring is added.
 
 See docs/IMPLEMENTATION_PLAN.md and docs/VERIFICATION.md.
+
+## Python-controlled game studio
+The new code-driven studio appears above the account panel. Choose one of four acceptance demos or a Day 1–5 mission. On small screens switch between Game and Code. Write Python and click Run game code. For acceptance demo 2, first finish demo 1 then use Load door code (keep coins). Pause/Resume/Stop control the action queue; Reset world clears state. See docs/CODE_DRIVEN_ARCHITECTURE.md for architecture, limits and remaining work.

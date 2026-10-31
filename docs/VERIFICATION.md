@@ -30,3 +30,6 @@ Screenshot: adventure-verification.png.
 ## Limits
 
 Only the first adventure scene was played end-to-end. The other world/day configurations build but have not each been played. The seven arcade rounds are introductory exercises; memory pairs and all other rounds still need exhaustive UI QA. Responsive mobile/tablet layouts and assistive-technology testing remain. Browser code results are untrusted and unranked. There is no reliable hard browser worker memory quota. Only selected missions have additional behavior assertions; others validate actual output. No production release or full-phase completion is claimed.
+
+## Code-driven bridge milestone
+Node bridge integration test executes the production Python API with trusted Python programs and replays the actual returned commands through the production TypeScript reducer. All four acceptance programs, locked-door rejection, malformed commands, and Days 1–5 positive/unsolved-starter cases pass. Five existing API tests pass. Browser Pyodide checks confirmed five moves/five coins, conditional door opening, function power 5 with one attack/50 enemy HP, while-loop three moves, magic print door, hidden-clue door and player-input movement. A mobile tab canvas layout issue was observed and fixed. Production build passes with a large lazy Phaser chunk warning.

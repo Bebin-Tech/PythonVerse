@@ -29,3 +29,6 @@ Implemented all 30 bilingual lessons with authored explanations, executable exam
 Verified: five integration tests, all trusted curriculum examples/behavior assertions, production build, dependency audit and browser learning/editor/adventure happy path plus wrong-output and infinite-loop paths. See VERIFICATION.md.
 
 Phase 2 core learning path and dashboard are implemented and tested at this scope; full original daily assessments/content depth and dashboard daily challenges/goals remain. Phases 3–5 have a working integrated baseline, not a complete game. Phase 1 production hardening and phases 6–7 remain open. Admin CRUD, migrations, rate limits, full world art/obstacles/enemies, richer battles, ranked validation, sound and complete settings remain.
+
+## Revised code-driven brief
+The attached master prompt supersedes the prior game gate design. Architecture is recorded in CODE_DRIVEN_ARCHITECTURE.md. Implemented a whitelisted Python-to-JSON-to-Phaser 3 command queue, prediction/replay agreement, pause/resume/stop/reset, bilingual first-five-day code missions, responsive split view and four acceptance demos. This is a new staged milestone; Days 6–30 have not yet been converted to code-driven missions. Existing learning content and accounts remain.
