@@ -11,15 +11,40 @@ def _pv_emit(op, value=None):
     if value is not None:
         command['value'] = value
     _pv_commands.append(command)
-def _pv_move(step):
-    _pv_state['position'] = max(0, min(8, _pv_state['position'] + step))
-    _pv_state['moves'] += 1
-    _pv_emit('move', step)
+def _pv_move(step, jumping=False):
+    s = _pv_state
+    if s['health'] <= 0:
+        _pv_emit('jump' if jumping else 'move', None if jumping else step)
+        return
+    target = max(0, min(8, s['position'] + step))
+    s['moves'] += 1
+    if s['doorPosition'] == target and not s['doorOpen']:
+        s['message'] = 'Door locked. Find the key and use_key().'
+    elif s['enemyPosition'] == target and s['enemyHealth'] > 0:
+        s['health'] = max(0, s['health'] - (5 if s['defending'] else 25))
+        s['defending'] = False
+        s['message'] = 'Enemy blocks the path. Attack from the adjacent tile.'
+    elif target in s['hazards'] and not jumping:
+        s['health'] = max(0, s['health'] - 25)
+        s['position'] = s['checkpoint']
+        s['message'] = 'Spikes! Returned to checkpoint. Use jump() before the hazard.'
+    else:
+        s['position'] = target
+        if s['keyPosition'] == target:
+            s['key'] = True
+            s['keyPosition'] = None
+            s['message'] = 'Key collected. Call use_key() to unlock the door.'
+        if s['checkpointPosition'] == target:
+            s['checkpoint'] = target
+            s['message'] = 'Checkpoint activated.'
+    _pv_emit('jump' if jumping else 'move', None if jumping else step)
+
 def move_forward(): _pv_move(1)
 def move_backward(): _pv_move(-1)
 def move_right(): _pv_move(1)
 def move_left(): _pv_move(-1)
-def jump(): _pv_emit('jump')
+def jump(): _pv_move(1, True)
+
 def collect_coin():
     position = _pv_state['position']
     if position in _pv_state['remaining']:
@@ -36,9 +61,14 @@ def use_key():
         _pv_state['key'] = False
     _pv_emit('key')
 def attack():
-    _pv_state['enemyHealth'] = max(0, _pv_state['enemyHealth'] - _pv_state['speed'] * 10)
-    _pv_state['attacks'] += 1
+    s = _pv_state
+    if s['health'] > 0 and (s['enemyPosition'] is None or abs(s['position'] - s['enemyPosition']) <= 1):
+        s['enemyHealth'] = max(0, s['enemyHealth'] - s['speed'] * 10)
+        s['attacks'] += 1
+    else:
+        s['message'] = 'Move next to the enemy before attacking.'
     _pv_emit('attack')
+
 def defend():
     _pv_state['defending'] = True
     _pv_emit('defend')
@@ -58,4 +88,3 @@ def print(*args, **kwargs):
     if _pv_state.get('magicMessage') and text == _pv_state['magicMessage']:
         _pv_state['doorOpen'] = True
     _pv_emit('message', text)
-

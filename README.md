@@ -60,3 +60,9 @@ See docs/IMPLEMENTATION_PLAN.md and docs/VERIFICATION.md.
 
 ## Python-controlled game studio
 The new code-driven studio appears above the account panel. Choose one of four acceptance demos or a Day 1–5 mission. On small screens switch between Game and Code. Write Python and click Run game code. For acceptance demo 2, first finish demo 1 then use Load door code (keep coins). Pause/Resume/Stop control the action queue; Reset world clears state. See docs/CODE_DRIVEN_ARCHITECTURE.md for architecture, limits and remaining work.
+
+## Playable three-quest prototype
+
+The game studio now starts at Quest 1: Crystal Crossing. Jump from tile 2 to tile 3 to avoid spikes; collect coins on their tiles, pick up the key at tile 4, call use_key(), and reach tile 8. Quest 2 unlocks after completion and adds an enemy at tile 6. Attack from tile 5. Quest 3 has a stronger boss. Health loss, death, a tile-2 checkpoint, locked doors and next-quest progression are deterministic in both Python and the renderer.
+
+Prototype quest completion is saved in this browser's localStorage, separately from account learning progress. New adventure clears that local quest progress. Reset world restarts only the current world. Movement is a discrete tile-based platform puzzle with animated jumps, not continuous physics. The prototype runs without logging in; Monaco/Pyodide assets need internet access.

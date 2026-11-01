@@ -32,3 +32,6 @@ Phase 2 core learning path and dashboard are implemented and tested at this scop
 
 ## Revised code-driven brief
 The attached master prompt supersedes the prior game gate design. Architecture is recorded in CODE_DRIVEN_ARCHITECTURE.md. Implemented a whitelisted Python-to-JSON-to-Phaser 3 command queue, prediction/replay agreement, pause/resume/stop/reset, bilingual first-five-day code missions, responsive split view and four acceptance demos. This is a new staged milestone; Days 6–30 have not yet been converted to code-driven missions. Existing learning content and accounts remain.
+
+## Playable campaign prototype
+Added three connected, Python-controlled quests with spikes, animated jumping, key collection, locked doors, health, checkpoints, adjacent enemy attacks, boss health, defeat/retry and victory/next-quest UI. Prototype progress and unlocks persist locally. Existing acceptance tests and beginner missions remain. Automated campaign solution and failure-path tests pass; production build passes. See PLAYABLE_PROTOTYPE.md.

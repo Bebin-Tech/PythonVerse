@@ -6,3 +6,5 @@
 .studio-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;margin-top:20px}.studio-tabs{display:flex;flex-wrap:wrap;gap:8px}.studio-tabs .primary{width:auto;margin:0}.studio pre{white-space:pre-wrap;overflow-wrap:anywhere}.studio textarea{width:100%;min-height:200px;background:#101426;color:#c9f7df;padding:14px}.studio-game{min-width:0}.studio-code{min-width:0}.mobile-tabs{display:none}.studio [role=alert]{color:#ffb1ab}.studio-game .stats{gap:18px;margin-top:18px}.studio-game .stats b{font-size:24px}@media(max-width:850px){.studio-grid{grid-template-columns:1fr}.mobile-tabs{display:flex;gap:10px;margin-top:20px}.studio-game,.studio-code{display:none}.studio-grid .mobile-active{display:block}}
 
 .studio-game>div:first-child{width:100%;aspect-ratio:780/370;position:relative;overflow:hidden}.studio-game canvas{display:block;margin-top:0!important}
+
+.quest-result{padding:20px;background:#3b776542;border:1px solid #76e5d0;border-radius:14px;margin:18px 0}.studio [aria-pressed=true]{border-color:#b5a1ff;background:#a392fa30}.studio button:disabled{cursor:not-allowed}
