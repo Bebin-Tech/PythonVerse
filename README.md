@@ -1,8 +1,27 @@
 # PYTHONVERSE
 
-Learn Python. Play. Build. Level Up.
+Don’t Just Learn Python. Play Python.
 
 A local React/TypeScript/Vite + FastAPI/SQLAlchemy application. This is an implemented learning preview, not a production release.
+
+## Play and preview
+
+**[Play the live prototype](https://pythonverse-ecru.vercel.app/)** · [Prototype guide](docs/PLAYABLE_PROTOTYPE.md)
+
+### Python-controlled quest
+
+Real gameplay from the three-quest prototype: the character reached the exit with full health, defeated the boss and opened the door using Python commands.
+
+![Python-controlled prototype showing the player at the exit, 100 health, and a defeated boss](docs/prototype-victory.png)
+
+<details>
+<summary>Earlier local adventure build</summary>
+
+This development screenshot shows the earlier portal and coding battle system. The live prototype uses the newer Python-controlled quest system shown above.
+
+![Earlier local adventure showing saved portal progress and coding battle victory](docs/adventure-verification.png)
+
+</details>
 
 ## Run on Windows in VS Code
 
